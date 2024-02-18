@@ -1,0 +1,159 @@
+:root{
+    --main-color:#00a884;
+}
+*{
+    font-family: sans-serif;
+}
+.bg-container{
+    background-color: black !important;
+    color: white;
+}
+.content{
+flex-wrap: wrap;
+justify-content: end;
+}
+#centerMyPost{
+    width: 44%;
+    margin: 22px 26px;
+    border-radius: 7px;
+}
+.revers{
+    display: flex;
+    justify-content: end
+}
+
+.container{
+    width: 73%;
+    background-color: white;
+    position: relative;
+}
+.container .bg{
+width: 100%;
+height: 40%;
+background-image: url(images/bg-profile.jpg);
+}
+.container  img{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    bottom:50px;
+    left: 20px;
+    border: 5px solid white;
+}
+.container .icon{
+    position: absolute;
+    right: 20px;
+    top: 343px;
+}
+.container .icon i{
+padding: 15px;
+border-radius: 50%;
+border: 3px solid var(--main-color);
+}
+.container .text-profile{
+display: flex;
+flex-direction: column;
+margin-left: 20px;
+margin-top: -30px;
+}
+
+.container .text-profile span{
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--main-color);
+    padding-bottom: 17px;
+}
+.container .text-profile h3{
+    display: flex;
+    
+}
+.container .text-profile h3 p{
+    color: #696868;
+    margin-left: 16px;
+    font-weight: 100;
+    font-size: 17px;
+}
+.container .text-profile h4{
+    padding: 10px 0;
+    font-weight: 100;
+}
+.container .text-profile h5{
+    padding: 20px 0;
+    font-size: 20px;
+}
+.container .text-profile p{
+    line-height: 24px;
+    font-size: 15px;
+}
+.myMedia{
+    margin: 20px 0px;
+    background-color: white;
+    border-radius: 10px;
+    width: 27%;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+.myMedia h1{
+    font-size: 23px;
+    padding: 25px;
+}
+.myMedia .images{
+    display: flex;
+    flex-wrap: wrap;
+    
+    flex-direction: row;
+}
+.myMedia .images img{
+    width: 42%;
+    height: 150px;
+    margin: auto;
+    border-radius: 10px;
+    margin: 14px;
+}
+@media (min-width: 320px) and (max-width: 600px) {
+    .content{
+        flex-direction: column;
+    }
+    .container{
+        width: 100%;
+    }
+    .container .bg{
+        width: 100%;
+        height: 40%;
+        position: absolute;
+        }
+        .container img{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            bottom: -243px;
+            left: 20px;
+        }
+        .container .text-profile{
+            margin-top: 250px;
+        }
+        .container .icon{
+            top: 313px;
+        }
+        .container .icon i{
+            padding: 10px;
+        }
+        .container .text-profile p{
+            font-size: 14px;
+        }
+        .revers{
+            display: flex;
+    flex-direction: column-reverse;
+        }
+        .myMedia{
+            width: 100%;
+        }
+        .myMedia .images img{
+            width: 41%; 
+        }
+        #centerMyPost{
+            width: 94%;
+            margin: 22px 10px;
+        }
+}
