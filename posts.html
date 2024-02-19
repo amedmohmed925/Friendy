@@ -51,47 +51,46 @@
             
             <div class="footer-card">
                 <div class="icons">
-                    <i class="fa-solid fa-image"></i>
+                    <label for="image-input">
+                        <i class="fas fa-image" id="image-icon"></i>
+                    </label>
                     <i class="fa-solid fa-face-smile"></i>
                 </div>
-                <div class="puplish">
-                    <img src="" alt="Img-Post"  id="profile-pic">
-                    <label id="label" for="input-file">PUBLISH POST</label>
-                    <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-file">
-                </div>
-               
-                <!-- <button>PUBLISH POST</button> -->
+                <input type="file" id="image-input" style="display:none" accept="image/*" onchange="displayImage(this)" />
+
+                <button  id="publish" onclick="post()">PUBLISH POST</button>
             </div>
         
+            <div id="post-content"></div>
         </div>
-
+        
            <div id="card" class="card">
-            <div class="info">
-                <div class="logo">
-                    <img src="images/2024-02-16_234317.jpg" alt="">
-                </div>
-                <div class="text">
-                    <h2>Ahmed AbouZaid </h2>
-                    <p>@Ahmed AbouZaid  -</p>
-                </div>
-                <span>
-                    Hi there I am feeling very good by making the post as it is now 
-                    <img src="images/face1.svg" alt="">
-                    <img src="images/face1.svg" alt="">
-                    <img src="images/face2.svg" alt="">
-                    <img src="images/face2.svg" alt="">
-                    <img src="" alt="Post">
-                </span>
-                <div class="footer">
-                    <div class="likes">
-                        <p>0 <i class="fa-solid fa-thumbs-up"></i></p>
-                        <p>0 <i class="fa-solid fa-share"></i></p>
-                        <p>0 <i class="fa-solid fa-comment"></i></p>
+                <div class="info">
+                    <div class="logo">
+                        <img src="images/2024-02-16_234317.jpg" alt="">
                     </div>
-                    <button> <i class="fa-solid fa-camera"></i>SEND TIP</button>
-                </div>
+                    <div class="text">
+                        <h2> <a href="profile.html">Ahmed AbouZaid</a> </h2>
+                        <p>@Ahmed AbouZaid  -</p>
+                    </div>
+                    <span>
+                        Hi there I am feeling very good by making the post as it is now 
+                        <img src="images/face1.svg" alt="">
+                        <img src="images/face1.svg" alt="">
+                        <img src="images/face2.svg" alt="">
+                        <img src="images/face2.svg" alt="">
+                        <img src="" alt="Post">
+                    </span>
+                    <div class="footer">
+                        <div class="likes">
+                            <p>0 <i class="fa-solid fa-thumbs-up"></i></p>
+                            <p>0 <i class="fa-solid fa-share"></i></p>
+                            <p>0 <i class="fa-solid fa-comment"></i></p>
+                        </div>
+                        <button> <i class="fa-solid fa-camera"></i>SEND TIP</button>
+                    </div>
 
-            </div>
+                </div>
 
            </div>
 
@@ -101,7 +100,7 @@
                     <img src="images/2024-02-16_234317.jpg" alt="">
                 </div>
                 <div class="text">
-                    <h2>Ahmed AbouZaid </h2>
+                    <h2><a href="profile.html">Ahmed AbouZaid</a></h2>
                     <p>@Ahmed AbouZaid  -</p>
                 </div>
                 <span>
@@ -132,7 +131,7 @@
                         <img src="images/2024-02-16_234317.jpg" alt="">
                     </div>
                     <div class="text">
-                        <h2>Ahmed AbouZaid </h2>
+                        <h2><a href="profile.html">Ahmed AbouZaid</a></h2>
                         <p>@Ahmed AbouZaid  -</p>
                     </div>
                     <span>

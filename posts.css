@@ -5,6 +5,10 @@
     user-select: none;
     font-family: sans-serif;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 :root{
     
     --dark-color: #000000;
@@ -61,7 +65,7 @@
     background-color: black !important;
     color: white;
 }
-label
+.ptn
 {
     display: inline-block;
     width: 116px;
@@ -93,12 +97,14 @@ label
 #star-1
 {
     position: relative;
+    display: none;
 }
 
 #star-2
 {
     position: absolute;
     transform: rotateZ(36deg);
+    display: none;
 }
 
 .star
@@ -116,8 +122,8 @@ label
     position: absolute;
     bottom: -52px;
     right: 8px;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-color: #fff;
     border-radius: 50%;
     transition: 0.3s ease bottom;
@@ -136,30 +142,30 @@ label
     transition: 0.3s ease background-color;
 }
 
-#toggle_checkbox:checked + label
+#toggle_checkbox:checked + .ptn
 {
     background-color: #000;
 }
 
-#toggle_checkbox:checked + label #star
+#toggle_checkbox:checked + .ptn #star
 {
-    top: 3px;
-    left: 64px;
+    top: 14px;
+    left: 75px;
     transform: scale(0.3);
     background-color: yellow;
 }
 
-#toggle_checkbox:checked + label .star
+#toggle_checkbox:checked + .ptn .star
 {
     color: yellow;
 }
 
-#toggle_checkbox:checked + label #moon
+#toggle_checkbox:checked + .ptn #moon
 {
     bottom: 8px;
 }
 
-#toggle_checkbox:checked + label #moon:before
+#toggle_checkbox:checked + .ptn #moon:before
 {
     background-color: #000;
 }
@@ -203,13 +209,17 @@ header .search input{
 }
 header .search i{
     position: absolute;
-    right: 6px;
-    top: 8%;
-    padding: 12px;
+    right: 1px;
+    top: 2%;
+    padding: 15px;
     background-color: var(--main-color);
     border-radius: 50%;
     outline: none;
+    color: white;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
 }
+
 @media (min-width: 320px) and (max-width: 600px) {
     header{
 
@@ -226,21 +236,25 @@ header .search i{
     header .search{
 display: none;
     }
-    label{
-        width: 100px;
-        height: 40px;
+    .ptn{
+        width: 90px;
+        height: 37px;
     }
     #star{
         position: absolute;
-        top: 7px;
-        left: 6px;
-        width: 30px;
-        height: 30px;
+        top: 9px;
+        left: 11px;
+        width: 20px;
+        height: 20px;
         background-color: #fafd0f;
         transform: scale(1);
         border-radius: 50%;
         transition: 0.3s ease top, 0.3s ease left, 0.3s ease transform, 0.3s ease background-color;
         z-index: 1;
+    }
+    #toggle_checkbox:checked + .ptn #star{
+        top: -2px;
+    left: 55px;
     }
     #moon{
         width: 30px;
@@ -416,6 +430,19 @@ border-radius: 10px;
     font-size: 15px;
     padding-top: 10px;
 }
+/* /////////////////////////////////// */
+.icons {
+    font-size: 24px;
+}
+
+#image-icon {
+    cursor: pointer;
+}
+
+#image-input {
+    display: none;
+}
+/* /////////////////////////////////// */
 #profile-pic{
     width: 150px;
     height: 150px;
@@ -437,17 +464,19 @@ margin-left: 20px;
 .center .happening .footer-card .icons i{
 font-size: 17px;
 margin: 0 5px;
+cursor: pointer;
 }
-.center .happening .footer-card label{
-    margin-right: 20px;
-    padding: 15px 20px;
-    outline: none;
+.center .happening .footer-card #publish{
+    padding: 10px;
+    margin: 0 15px;
     border: none;
-   background-color: var(--main-color);
-   color: white;
-   font-size: 15px;
-   border-radius: 5px;
+    border-radius: 3px;
+    background-color: var(--main-color);
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
 }
+
 .center .happening .footer-card input{
     display: none;
 }
@@ -478,7 +507,7 @@ position: relative;
 width: 100%;
 }
 .center .card .info .text{
-display: flex;
+/* display: flex; */
 align-items: center;
 margin-left: 10px;
 }
@@ -486,7 +515,7 @@ margin-left: 10px;
 
 }
 .center .card .info .text  p{
-    color: #00000095;
+    color: #999595e6;
     margin-left: 10px;
 }
 .center .card .info span{
@@ -547,6 +576,7 @@ display: flex;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
 }
 #cardThree .info{
     
@@ -610,7 +640,7 @@ height:500px ;
         margin-top: 19px;
     }
     .center .card .info .text p{
-        margin-top: 19px;
+        /* margin-top: 19px; */
     }
     .center .happening .footer-card #label{
         padding: 2px 14px;
@@ -737,6 +767,109 @@ height:500px ;
     margin-top: -48px;
     width: 100px;
     height: 35px;
+    }
+    label{
+        width: 90px !important;
+        height: 37px !important;
+        margin-top: 35px !important;
+    }
+    #star{
+        width: 20px;
+        height: 20px;
+        top: 10px;
+        left: 7px;
+    }
+    #toggle_checkbox:checked + label #moon{
+        width: 30px;
+        height: 30px;
+    }
+    .center .card .info .footer button{
+        padding: 11px 29px;
+        font-size: 14px;
+    }
+    .container .text-profile p{
+        line-height: 18px !important;
+    font-size: 13px !important;
+    }
+    .container{
+        width: 72% !important;
+    }
+    .myMedia .images img{
+        width: 90% !important;
+    }
+    .revers{
+        margin-top: 37px;
+    }
+    #centerMyPost{
+        width: 70% !important;
+        margin-left: 0 !important;
+    }
+    .myMedia{
+        width: 35% !important;
+    }
+    .content .left ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+    }
+}
+@media (min-width: 770px) and (max-width: 1025px){
+    #ptn{
+        width: 100px;
+    height: 40px;
+    margin-top: 39px;
+    }
+    #star{
+        width: 20px;
+        height: 20px;
+        
+    }
+    #moon{
+        width: 30px;
+    height: 30px;
+    }
+    #toggle_checkbox:checked + label #star{
+        width: 30px;
+        height: 30px;
+    }
+    .center .card .info .footer button{
+        padding: 11px 29px;
+        font-size: 14px;
+    }
+    .container .text-profile p{
+        line-height: 18px !important;
+    font-size: 13px !important;
+    }
+    .container{
+        width: 72% !important;
+    }
+    .myMedia .images img{
+        width: 90% !important;
+    }
+    .revers{
+        margin-top: 37px;
+    }
+    #centerMyPost{
+        width: 70% !important;
+        margin-left: 0 !important;
+    }
+    .myMedia{
+        width: 35% !important;
+    }
+    .content .left ul li{
+        margin: 10px 10px;
+    }
+    .content .left ul li a i{
+        font-size: 18px;
+    }
+    
+}
+@media (min-width: 1026px) and (max-width: 1200px){
+    .myMedia .images{
+        justify-content: center;
+    }
+    .myMedia .images img{
+        width: 60% !important;
     }
 }
 footer{

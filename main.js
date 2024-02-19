@@ -1,30 +1,17 @@
-
 function check() {
     let emailInput = document.querySelector(".email-input");
     let passwordInput = document.querySelector(".password-input");
-
-    // Remove any existing error messages
     removeErrorMessage(emailInput);
     removeErrorMessage(passwordInput);
 
-    // Check if the email input is a valid email format
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(emailInput.value)) {
-       
         displayErrorMessage(emailInput, "Email is Required");
-    } else {
-        emailInput.style.border = "1px solid green";
-        emailInput.style.background = "#0080002e";
     }
 
-    // Check if the password input has a value
     if (passwordInput.value.trim() === "") {
-        
         displayErrorMessage(passwordInput, "Password is Required");
-    } else {
-        passwordInput.style.border = "1px solid green";
-        passwordInput.style.background = "#0080002e";
     }
 }
 
@@ -32,7 +19,6 @@ function displayErrorMessage(inputElement, errorMessage) {
     let errorElement = document.createElement("p");
     let errorText = document.createTextNode(errorMessage);
     errorElement.appendChild(errorText);
-
     errorElement.style.color = "red";
     errorElement.style.marginTop = "5px";
     errorElement.style.background = "#ff000017";
@@ -45,25 +31,21 @@ function displayErrorMessage(inputElement, errorMessage) {
 
 function removeErrorMessage(inputElement) {
     let sibling = inputElement.nextSibling;
-
     while (sibling) {
         if (sibling.nodeType === 1 && sibling.tagName.toLowerCase() === "p") {
             sibling.parentNode.removeChild(sibling);
         }
-
         sibling = sibling.nextSibling;
     }
 }
 
 function toggleCheckbox() {
     var checkbox = document.getElementById("toggle");
-    
     checkbox.checked = !checkbox.checked;
-   
 }
 
 function myFunction() {
-let div = document.getElementsByClassName("left");
+    let div = document.getElementsByClassName("left");
     let ptn = document.getElementById("ptn");
     let color = document.getElementById("color");
     let right = document.getElementById("right");
@@ -75,7 +57,6 @@ let div = document.getElementsByClassName("left");
     let cardThree = document.getElementById("cardThree");
     // let home = document.getElementById("home");
     let container = document.getElementById("bgContainer");
-
     // let footer = document.getElementById("footer")
     // let footer = document.getElementsByTagName("footer")
     let footer = document.getElementsByTagName("footer")
@@ -83,7 +64,6 @@ let div = document.getElementsByClassName("left");
     ptn.classList.toggle("dark-mode");
     color = document.body
     color.classList.toggle("color");
-    
     right.classList.toggle("bg-happ");
     left.classList.toggle("bg-happ");
     happening.classList.toggle("bg-happ");
@@ -95,36 +75,80 @@ let div = document.getElementsByClassName("left");
     container.classList.toggle("bg-container")
     // footer.classList.toggle("bg-profile")
     // footer.classList.toggle("dark")
-  }
-
-  span = document.querySelector(".up");
-
-window.onscroll = function () {
-    // console.log(this.scrollY)
-if (this.scrollY >= 216) {
-    span.classList.add("show");
-} else {
-    span.classList.remove("show");
 }
-}
-span.onclick = function () {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    }
-        
-    )
-}
-
 function showBar() {
-    let left= document.getElementById("left");
+    let left = document.getElementById("left");
     let marg = document.getElementsByClassName("li");
     left.classList.toggle("showbar");
-    
 }
-let profilePic = document.getElementById("profile-pic");
-let inputFile =  document.getElementById("input-file");
 
-inputFile.onchange = function () {
-    profilePic.src = URL.createObjectURL(inputFile.files[0])
+function displayImage(input) {
+    let file = input.files[0];
+    if (file) {
+        let reader = new FileReader();
+        reader.onload = function(e) {
+            let imageIcon = document.getElementById('image-icon');
+            imageIcon.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+    console.log(file)
+    let card = document.createElement("img");
+    console.log(card);
+    card.appendChild(file)
+}
+
+function displayImage(input) {
+    let file = input.files[0];
+    if (file) {
+        let reader = new FileReader();
+        reader.onload = function(e) {
+            let imageIcon = document.getElementById('image-icon');
+            imageIcon.src = e.target.result;
+            let card = document.createElement("img");
+            card.src = e.target.result;
+            document.body.appendChild(card);
+        };
+        reader.readAsDataURL(file);
+        console.log(file)
+        console.log(typeof file)
+        let x = document.createElement("IMG");
+        console.log(x)
+        // x.appendChild(file)
+        let textareaElement = document.getElementById("textarea");
+        let textValue = textareaElement.value
+        console.log(typeof textValue)
+        console.log(x + file)
+    }
+}
+
+window.onload = function(){ 
+    span = document.querySelector(".up");
+    if (span != null) {
+        window.onscroll = function() {
+            // console.log(this.scrollY)
+            if (this.scrollY >= 216) {
+                span.classList.add("show");
+            } else {
+                span.classList.remove("show");
+            }
+        }
+        span.onclick = function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        }
+
+    }
+};
+function post() {
+    var happening = document.getElementById('happening');
+    var text = document.getElementById("textarea");
+     var original = document.getElementById('card');
+    var clone = original.cloneNode(true);
+    happening.after(clone);
+    var sp = clone.querySelector("span");
+    sp.innerText = text.value;
+    text.value = "";
 }

@@ -1,67 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friendy</title>
-    <script src="https://kit.fontawesome.com/d61cfd01ad.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-    <div class="main" >
-        <div id="img" class="img">
-            <img src="images/big-bg.jpg" alt="">
-        </div>
-
-        <div id="SignUp" class="mainText">
-            <header>
-                <div class="logo">
-                    <h1><p>F</p> Friendy</h1>
-                </div>
-                <p>Don`t have an account?<a onclick="showCreateAcc()" href="creatAcc.html">Sign up</a></p>
-            </header>
-            <div class="content">
-
-                <div class="text">
-                    <h1>Welcom Back</h1>
-                    <h3>Login into your account</h3>
-                    <div class="links">
-                        <a href="posts.html">FaceBook</a>
-                        <a href="#">Google</a>
-                    </div>
-                    <p>Or continue with</p>
-                </div>
-                
-                    
-                    <form action="">
-                        <input class="email-input" type="email" placeholder="Enter Your Email" required>
-                        <input class="password-input"  type="password" placeholder="Enter Your password" required>
-                        
-                        <div class="remember">
-                            <p ><label for="toggle" class="toggle-label">
-                                <input class="circle" id="toggle" name="toggle" type="checkbox" />
-                              </label>
-                               
-                               <span id="rememberText" onclick="toggleCheckbox()">Remember Me</span>
-                            </p>
-                            <a href="#">Recover password</a>
-                        </div>
-                        
-                    <a onclick="check()" href="creatAcc.html">
-                        <input class="log-in"  type="submit" value="LOG IN">
-                    </a>    
-                    
-                    <!-- <button onclick="check()"><a href="creatAcc.html"></a></button> -->
-                    </form>
-
-                   
-                    
+    <head>
+        <meta charset="utf-8">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+                <title>
+                    Friendy
+                </title>
+                <script crossorigin="anonymous" src="https://kit.fontawesome.com/d61cfd01ad.js">
+                </script>
+                <link href="style.css" rel="stylesheet">
+                </link>
+            </meta>
+        </meta>
+    </head>
+    <body>
+        <main class="main">
+            <div class="img" id="img">
+                <img alt="" src="images/f.png"></img>
             </div>
-        </div>
-    </div>
+            <div class="mainText" id="SignUp">
+                <header>
+                    <div class="logo">
+                        <h1>
+                            <p>
+                                F
+                            </p>
+                            Friendy
+                        </h1>
+                    </div>
+                </header>
+                <div class="content">
+                    <div class="text">
+                        <h1>Welcom Back</h1>
+                        <h3>Sign in to your account</h3>
+                        <div class="links">
+                            <a href="posts.html">Continue with Facebook</a>
+                            <a href="#">Continue with Google</a>
+                        </div>
+                        <div class="dvr" data-dvr="OR"></div>
+                    </div>
+                    <form name="myForm" method="post">
+                        <input id="username" class="email-input" name="username" placeholder="Enter Your Email" required="" type="email"  />
+                        <input id="password" class="password-input" name="password" placeholder="Enter Your password" required="" type="password"  />
 
-   
-    <script src="main.js"></script>
-</body>
+                        <div class="remember">
+                            <p>
+                                <label class="toggle-label" for="toggle">
+                                    <input class="circle" id="toggle" name="toggle" type="checkbox"/>
+                                </label>
+                                <span id="rememberText" onclick="toggleCheckbox()">
+                                    Remember Me
+                                </span>
+                            </p>
+                            <a href="#">
+                                Recover password
+                            </a>
+                        </div>
+                        <a class="singup log-in" href="creatAcc.html">Create account</a>
+                        
+                        <input class="log-in" type="submit" value="LOG IN" onclick="check()" />
+                    
+                    </form>
+                </div>
+            </div>
+        </main>
+        <script src="main.js"></script>
+    </body>
 </html>

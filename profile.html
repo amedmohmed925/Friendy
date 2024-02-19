@@ -70,17 +70,16 @@
         
         <div class="footer-card">
             <div class="icons">
-                <i class="fa-solid fa-image"></i>
+                <label for="image-input">
+                    <i class="fas fa-image" id="image-icon"></i>
+                </label>
                 <i class="fa-solid fa-face-smile"></i>
             </div>
-            <div class="puplish">
-                <img src="" alt="Img-Post"  id="profile-pic">
-                <label id="label" for="input-file">PUBLISH POST</label>
-                <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-file">
-            </div>
-           
-            <!-- <button>PUBLISH POST</button> -->
+            <input type="file" id="image-input" style="display:none" accept="image/*" onchange="displayImage(this)" />
+
+            <button  id="publish">PUBLISH POST</button>
         </div>
+    
     
     </div>
 
